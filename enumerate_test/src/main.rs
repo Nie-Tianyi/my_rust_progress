@@ -10,6 +10,8 @@ fn main() {
 
     impl IpAddr{
         //枚举的方法有什么用？？？
+        //有大用
+        // .entry().or_insert() .entry() return enum Entry
     }
 
     let home = IpAddr::V4(127,0,0,1);
