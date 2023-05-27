@@ -1,0 +1,1 @@
+C:\Users\Administrator\CLionProjects\cmdl_based_hr_management_system\target\debug\cmdl_based_hr_management_system.exe: C:\Users\Administrator\CLionProjects\cmdl_based_hr_management_system\src\main.rs
