@@ -1,9 +1,7 @@
-use std::io;
-use std::option::Option;
 
 fn main() {
-    let string = String::new();
-    let mut add_one = Cacher::new(|x| x+1);
+    let y = 2;
+    let mut add_one = Cacher::new(|x| x* y);
     let x1 = add_one.value(123);
     println!("{}",x1);
 }
@@ -13,7 +11,7 @@ where
     T:Fn(i32) -> i32
 {
     calculate:T,
-    value:None,
+    value:Option<i32>,
 }
 
 impl<T> Cacher<T>
@@ -22,17 +20,17 @@ where
 {
     fn new(calc:T) -> Cacher<T>{
         Cacher{
-            calculate : T,
-            value:None
+            calculate : calc,
+            value:None,
         }
     }
 
-    fn value(&mut self,level:i32) -> Some(i32){
+    fn value(&mut self,level:i32) -> i32{
         match self.value {
             Some(v) => v,
             None => {
                 let v = (self.calculate)(level);
-                self.value = v;
+                self.value = Some(v);
                 v
             }
         }
